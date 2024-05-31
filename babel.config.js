@@ -5,5 +5,12 @@ module.exports = function (api) {
     plugins: [
       'react-native-reanimated/plugin',
     ],
+    // dependencies: {
+    //   'react-native-vector-icons': {
+    //     platforms: {
+    //       ios: null,
+    //     },
+    //   },
+    // }
   };
 };

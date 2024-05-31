@@ -8,7 +8,7 @@ interface Props {
     color?:string,
     size?:number,
     flex?:number,
-    styles:StyleProp<TextStyle>,
+    styles?:StyleProp<TextStyle>,
     numberOfLines?:number,
 }
 
