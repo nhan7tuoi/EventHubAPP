@@ -5,6 +5,12 @@ import OnboardingScreen from "./auth/OnboardingScreen";
 import RegisterScreen from "./auth/RegisterScreen";
 import VerificationScreen from "./auth/VerificationScreen";
 import ForgotPasswordScreen from "./auth/ForgotPasswordScreen";
+import EventsScreen from "./events/EventsScreen";
+import ExploreScreen from "./explores/ExploreScreen";
+import ProfileScreen from "./profiles/ProfileScreen";
+import MapScreen from "./maps/MapScreen";
+import AddNewScreen from "./AddNewScreen";
+
 
 
 export {
@@ -15,4 +21,9 @@ export {
     RegisterScreen,
     VerificationScreen,
     ForgotPasswordScreen,
+    EventsScreen,
+    ExploreScreen,
+    ProfileScreen,
+    MapScreen,
+    AddNewScreen
 };
