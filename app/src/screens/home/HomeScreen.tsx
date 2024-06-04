@@ -1,5 +1,14 @@
 import React from "react";
-import { Platform, Pressable, StatusBar, Text, View } from "react-native";
+import {
+  FlatList,
+  ImageBackground,
+  Platform,
+  Pressable,
+  ScrollView,
+  StatusBar,
+  Text,
+  View,
+} from "react-native";
 import { globalStyles } from "../../styles/globalStyles";
 import colorApp from "../../contansts/colorApp";
 import {
@@ -10,14 +19,32 @@ import {
   Sort,
 } from "iconsax-react-native";
 import {
+  CardComponent,
   CategoriesList,
   CircleComponent,
+  EventItem,
+  TabBarComponent,
   TagComponent,
   TextComponent,
 } from "../../components";
 import MateriaIcons from "react-native-vector-icons/MaterialIcons";
+import sizeApp from "../../contansts/sizeApp";
 
 const HomeScreen = ({ navigation }: any) => {
+  const itemEvent = {
+    title: "International Band Music Concert",
+    description: "Enjoy the music of the world with the best band in the world",
+    location: {
+      title: "Ho Chi Minh City",
+      address: "Go Vap, HCM",
+    },
+    users: [""],
+    authorId: "",
+    startDate: Date.now(),
+    endDate: Date.now(),
+    date: Date.now(),
+    image: "",
+  };
   return (
     <View style={[globalStyles.container]}>
       {/* <StatusBar barStyle={'light-content'}/> */}
@@ -95,7 +122,7 @@ const HomeScreen = ({ navigation }: any) => {
                   isFillter: false,
                 })
               }
-              style={{ flexDirection: "row",marginTop:10 }}
+              style={{ flexDirection: "row", marginTop: 5 }}
             >
               <SearchNormal1
                 variant="TwoTone"
@@ -111,7 +138,7 @@ const HomeScreen = ({ navigation }: any) => {
                 }}
               />
               <TextComponent
-                styles={{ fontSize: 16 }}
+                styles={{ fontSize: 18 }}
                 text="Search..."
                 color={colorApp.gray2}
               />
@@ -123,25 +150,73 @@ const HomeScreen = ({ navigation }: any) => {
                 });
               }}
               label="Fillters"
+              sizeText={14}
               icon={
-                <CircleComponent size={24}>
+                <CircleComponent size={20}>
                   <Sort size={16} color={colorApp.white} />
                 </CircleComponent>
               }
               backgroundColor={"#524CE0"}
             ></TagComponent>
           </View>
-          <View style={{ marginVertical: 10 }} />
+          <View style={{ marginVertical: 14 }} />
         </View>
-        <View
-          style={{
-            marginVertical: 5,
-          }}
-        >
+        <View>
           <CategoriesList isFill={true} />
         </View>
       </View>
-      <View style={{ flex: 1 }}></View>
+
+      <View style={{ height: 20 }}></View>
+      <ScrollView
+        style={{ flex: 1 }}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          padding: 16,
+        }}
+      >
+        <TabBarComponent title="Up Comming Events" onPress={() => {}} />
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          horizontal
+          data={Array.from({ length: 10 })}
+          renderItem={({ item, index }) => {
+            return <EventItem type="card" item={itemEvent} />;
+          }}
+        />
+
+        
+
+        <TabBarComponent title="NearBy You" onPress={() => {}} />
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          horizontal
+          data={Array.from({ length: 10 })}
+          renderItem={({ item, index }) => {
+            return <EventItem type="card" item={itemEvent} />;
+          }}
+        />
+        {/* <View style={{
+          flex:1,
+          justifyContent:'center',
+          alignItems:'center',
+        }}>
+          <ImageBackground
+            style={{ width:sizeApp.sizes.WIDTH*1, height: 127,padding:16,alignSelf:'center'
+            }}
+            source={require("../../assets/images/invite-image.png")}
+            imageStyle={{
+              resizeMode: "contain",
+              borderRadius: 20,
+            }}
+          >
+            <TextComponent
+              text="Invite Friends"
+              color={colorApp.white}
+              styles={{ fontSize: 24, fontWeight: "bold", marginTop: 20 }}
+            />
+          </ImageBackground>
+        </View> */}
+      </ScrollView>
     </View>
   );
 };

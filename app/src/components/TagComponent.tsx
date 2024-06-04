@@ -10,10 +10,11 @@ interface Props {
   textColor?: string;
   backgroundColor?: string;
   styles?: StyleProp<ViewStyle>;
+  sizeText?: number;
 }
 
 const TagComponent = (props: Props) => {
-  const { onPress, label, icon, textColor, backgroundColor, styles } = props;
+  const { onPress, label, icon, textColor, backgroundColor, styles ,sizeText} = props;
   return (
     <Pressable onPress={onPress}
       style={[
@@ -38,7 +39,7 @@ const TagComponent = (props: Props) => {
             ? colorApp.white
             : colorApp.gray
         }
-        size={16}
+        size={sizeText ?? 16}
       />
     </Pressable>
   );

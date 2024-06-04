@@ -7,6 +7,10 @@ import CircleComponent from './CircleComponent';
 import DrawerCustom from './DrawerCustom';
 import TagComponent from './TagComponent';
 import CategoriesList from './CategoriesList';
+import TabBarComponent from './TabBarComponent';
+import EventItem from './EventItem';
+import CardComponent from './CardComponent';
+import AvatarGroup from './AvatarGroup';
 
 export {
     TextComponent,
@@ -17,5 +21,9 @@ export {
     CircleComponent,
     DrawerCustom,
     TagComponent,
-    CategoriesList
+    CategoriesList,
+    TabBarComponent,
+    EventItem,
+    CardComponent,
+    AvatarGroup,
 }
