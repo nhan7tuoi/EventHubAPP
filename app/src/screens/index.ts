@@ -10,6 +10,7 @@ import ExploreScreen from "./explores/ExploreScreen";
 import ProfileScreen from "./profiles/ProfileScreen";
 import MapScreen from "./maps/MapScreen";
 import AddNewScreen from "./AddNewScreen";
+import SearchEvents from "./events/SearchEvents";
 
 
 
@@ -25,5 +26,6 @@ export {
     ExploreScreen,
     ProfileScreen,
     MapScreen,
-    AddNewScreen
+    AddNewScreen,
+    SearchEvents
 };

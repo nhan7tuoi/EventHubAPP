@@ -5,7 +5,8 @@ import ContainerComponent from './ContainerComponent';
 import SocialLogin from './SocialLogin';
 import CircleComponent from './CircleComponent';
 import DrawerCustom from './DrawerCustom';
-
+import TagComponent from './TagComponent';
+import CategoriesList from './CategoriesList';
 
 export {
     TextComponent,
@@ -14,5 +15,7 @@ export {
     ContainerComponent,
     SocialLogin,
     CircleComponent,
-    DrawerCustom
+    DrawerCustom,
+    TagComponent,
+    CategoriesList
 }
